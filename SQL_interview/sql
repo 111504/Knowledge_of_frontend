@@ -1,0 +1,8 @@
+select name,population from world where  name in ('France','Germany','Italy') 
+-- in -- 
+
+select name from world where name like '%United' or name like 'United%'
+-- like --
+
+SELECT name,ROUND(population/1000000,2),ROUND(gdp/1000000000,2) from world where continent = 'South America'
+--ROUND ()後面數字是小數點後幾位--
