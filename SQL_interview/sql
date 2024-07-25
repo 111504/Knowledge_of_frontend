@@ -6,3 +6,32 @@ select name from world where name like '%United' or name like 'United%'
 
 SELECT name,ROUND(population/1000000,2),ROUND(gdp/1000000000,2) from world where continent = 'South America'
 --ROUND ()後面數字是小數點後幾位--
+
+SELECT name, capital
+  FROM world
+ WHERE   LENGTH(name) = LENGTH(capital)
+ -- LENGTH  --
+
+-- 查詢年齡等於30的所有用戶
+SELECT * FROM Users WHERE age = 30;
+
+-- 查詢年齡不等於30的所有用戶
+SELECT * FROM Users WHERE age != 30;
+
+-- 查詢年齡大於30的所有用戶
+SELECT * FROM Users WHERE age > 30;
+
+-- 查詢名字以 'J' 開頭的所有用戶
+SELECT * FROM Users WHERE name LIKE 'J%';
+
+-- 查詢年齡在20到30之間的所有用戶
+SELECT * FROM Users WHERE age BETWEEN 20 AND 30;
+
+-- 查詢年齡為20、30或40的所有用戶
+SELECT * FROM Users WHERE age IN (20, 30, 40);
+
+-- 查詢年齡為NULL的所有用戶
+SELECT * FROM Users WHERE age IS NULL;
+
+-- 查詢年齡不為NULL的所有用戶
+SELECT * FROM Users WHERE age IS NOT NULL;
