@@ -35,3 +35,7 @@ SELECT * FROM Users WHERE age IS NULL;
 
 -- 查詢年齡不為NULL的所有用戶
 SELECT * FROM Users WHERE age IS NOT NULL;
+
+
+
+ggg
