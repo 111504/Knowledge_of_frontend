@@ -1,0 +1,33 @@
+1.java 為什麼能跨平台 .java檔 程式碼編譯成 .class檔 在jvm運行
+
+2. Java 運行時環境（JRE）
+Java 運行時環境包括 JVM 以及標準庫（standard libraries）和其他支持 Java 應用程序運行的組件。JRE 保證了程序在不同平台上的行為是一致的。
+
+3.static 的變數是存在jvm的哪種記憶體
+
+4.私有建構式
+class GFG {
+    static GFG instance = null;
+    public int x = 10;
+    // private constructor can't be accessed outside the
+    // class
+    private GFG() {}
+    // Factory method to provide the users with instances
+    static public GFG getInstance()
+    {
+        if (instance == null)
+            instance = new GFG();
+        return instance;
+    }
+}
+// Driver Class
+class Main {
+    public static void main(String args[])
+    {
+        GFG a = GFG.getInstance();
+        GFG b = GFG.getInstance();
+        a.x = a.x + 10;
+        System.out.println("Value of a.x = " + a.x);
+        System.out.println("Value of b.x = " + b.x);
+    }
+}
