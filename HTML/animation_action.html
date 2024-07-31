@@ -1,0 +1,68 @@
+<!-- 
+    transitionend：當 CSS 過渡完成時觸發。
+animationstart：當 CSS 動畫開始時觸發。
+animationend：當 CSS 動畫結束時觸發。
+animationiteration：當 CSS 動畫重複時觸發。
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>動畫和過渡事件示例</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      transition: background-color 2s;
+      animation: move 5s infinite;
+    }
+
+    .box.transitioned {
+      background-color: red;
+    }
+
+    @keyframes move {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(200px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="box"></div>
+  <button onclick="startTransition()">開始過渡</button>
+
+  <script>
+    // 過渡事件處理程序
+    function handleTransitionEnd(event) {
+      console.log('過渡完成', event);
+    }
+
+    // 動畫事件處理程序
+    function handleAnimationStart(event) {
+      console.log('動畫開始', event);
+    }
+
+    function handleAnimationEnd(event) {
+      console.log('動畫結束', event);
+    }
+
+    function handleAnimationIteration(event) {
+      console.log('動畫重複', event);
+    }
+
+    // 開始過渡
+    function startTransition() {
+      const box = document.getElementById('box');
+      box.classList.add('transitioned');
+    }
+
+    // 為過渡和動畫事件添加監聽器
+    const box = document.getElementById('box');
+    box.addEventListener('transitionend', handleTransitionEnd);
+    box.addEventListener('animationstart', handleAnimationStart);
+    box.addEventListener('animationend', handleAnimationEnd);
+    box.addEventListener('animationiteration', handleAnimationIteration);
+  </script>
+</body>
+</html>

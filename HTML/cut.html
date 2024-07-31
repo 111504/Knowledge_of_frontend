@@ -1,0 +1,40 @@
+<!-- 常見的剪貼板事件
+copy：當複製操作時觸發。
+cut：當剪切操作時觸發。
+paste：當粘貼操作時觸發。 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>剪貼板事件示例</title>
+  <style>
+    .textarea {
+      width: 300px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <textarea class="textarea" id="textarea" placeholder="在這裡複製、剪切和粘貼文本"></textarea>
+
+  <script>
+    // 剪貼板事件處理程序
+    function handleCopy(event) {
+      console.log('文本已複製');
+    }
+
+    function handleCut(event) {
+      console.log('文本已剪切');
+    }
+
+    function handlePaste(event) {
+      console.log('文本已黏貼');
+    }
+
+    // 為剪貼板事件添加監聽器
+    const textarea = document.getElementById('textarea');
+    textarea.addEventListener('copy', handleCopy);
+    textarea.addEventListener('cut', handleCut);
+    textarea.addEventListener('paste', handlePaste);
+  </script>
+</body>
+</html>

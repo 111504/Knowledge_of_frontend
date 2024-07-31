@@ -1,0 +1,96 @@
+<!-- 
+keydown：當按下一個鍵時觸發。
+keyup：當釋放一個鍵時觸發。 
+click：當點擊一個元素時觸發。
+dblclick：當雙擊一個元素時觸發。
+mousedown：當按下鼠標按鍵時觸發。
+mouseup：當釋放鼠標按鍵時觸發。
+mousemove：當鼠標在元素上移動時觸發。
+mouseover：當鼠標移到元素上時觸發。
+mouseout：當鼠標離開元素時觸發。
+mouseenter：當鼠標指針移入元素時觸發（不冒泡）。
+mouseleave：當鼠標指針移出元素時觸發（不冒泡）。
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>鍵盤和鼠標事件示例</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="box"></div>
+
+  <script>
+    // 鍵盤事件處理程序
+    function handleKeyDown(event) {
+      console.log(`Key down: ${event.key}`);
+    }
+
+    function handleKeyUp(event) {
+      console.log(`Key up: ${event.key}`);
+    }
+
+    // 鼠標事件處理程序
+    function handleClick() {
+      console.log('Element clicked');
+    }
+
+    function handleDblClick() {
+      console.log('Element double-clicked');
+    }
+
+    function handleMouseDown() {
+      console.log('Mouse button down');
+    }
+
+    function handleMouseUp() {
+      console.log('Mouse button up');
+    }
+
+    function handleMouseMove() {
+      console.log('Mouse moved over element');
+    }
+
+    function handleMouseOver() {
+      console.log('Mouse over element');
+    }
+
+    function handleMouseOut() {
+      console.log('Mouse out of element');
+    }
+
+    function handleMouseEnter() {
+      console.log('Mouse entered element');
+    }
+
+    function handleMouseLeave() {
+      console.log('Mouse left element');
+    }
+
+    // 為鍵盤事件添加監聽器
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+
+    // 為鼠標事件添加監聽器
+    const box = document.getElementById('box');
+    box.addEventListener('click', handleClick);
+    box.addEventListener('dblclick', handleDblClick);
+    box.addEventListener('mousedown', handleMouseDown);
+    box.addEventListener('mouseup', handleMouseUp);
+    box.addEventListener('mousemove', handleMouseMove);
+    box.addEventListener('mouseover', handleMouseOver);
+    box.addEventListener('mouseout', handleMouseOut);
+    box.addEventListener('mouseenter', handleMouseEnter);
+    box.addEventListener('mouseleave', handleMouseLeave);
+  </script>
+</body>
+</html>

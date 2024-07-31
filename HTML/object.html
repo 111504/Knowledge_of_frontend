@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Input Types Example</title>
+</head>
+<body>
+    <h1>HTML Input Types Example</h1>
+    <form>
+        <label for="text">Text:</label>
+        <input type="text" id="text" name="text"><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="number">Number:</label>
+        <input type="number" id="number" name="number"><br><br>
+
+        <label for="tel">Telephone:</label>
+        <input type="tel" id="tel" name="tel"><br><br>
+
+        <label for="url">URL:</label>
+        <input type="url" id="url" name="url"><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date"><br><br>
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time"><br><br>
+
+        <label for="datetime-local">Datetime Local:</label>
+        <input type="datetime-local" id="datetime-local" name="datetime-local"><br><br>
+
+        <label for="month">Month:</label>
+        <input type="month" id="month" name="month"><br><br>
+
+        <label for="week">Week:</label>
+        <input type="week" id="week" name="week"><br><br>
+
+        <label for="color">Color:</label>
+        <input type="color" id="color" name="color"><br><br>
+
+        <label for="file">File:</label>
+        <input type="file" id="file" name="file"><br><br>
+
+        <label for="range">Range:</label>
+        <input type="range" id="range" name="range" min="0" max="100" value="50"><br><br>
+
+        <label for="checkbox">Checkbox:</label>
+        <input type="checkbox" id="checkbox" name="checkbox"><br><br>
+
+        <label for="radio">Radio:</label>
+        <input type="radio" id="radio" name="radio"><br><br>
+
+        <label for="search">Search:</label>
+        <input type="search" id="search" name="search"><br><br>
+
+        <label for="hidden">Hidden (not visible):</label>
+        <input type="hidden" id="hidden" name="hidden" value="hidden_value"><br><br>
+
+        <label for="submit">Submit:</label>
+        <input type="submit" id="submit" name="submit" value="Submit"><br><br>
+
+        <label for="reset">Reset:</label>
+        <input type="reset" id="reset" name="reset" value="Reset"><br><br>
+
+        <label for="button">Button:</label>
+        <input type="button" id="button" name="button" value="Button"><br><br>
+       <!-- Single select dropdown -->
+       <label for="dropdown">Dropdown (Single Select):</label>
+       <select id="dropdown" name="dropdown">
+           <option value="option1">Option 1</option>
+           <option value="option2">Option 2</option>
+           <option value="option3">Option 3</option>
+       </select><br><br>
+
+       <!-- Multiple select dropdown -->
+       <label for="multi-select">Dropdown (Multiple Select):</label>
+       <select id="multi-select" name="multi-select" multiple>
+           <option value="option1">Option 1</option>
+           <option value="option2">Option 2</option>
+           <option value="option3">Option 3</option>
+           <option value="option4">Option 4</option>
+           <option value="option5">Option 5</option>
+       </select><br><br>
+
+         <!-- Textarea -->
+         <label for="textarea">Textarea:</label>
+         <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea><br><br>
+ 
+         <!-- Fieldset with legend -->
+         <fieldset>
+             <legend>Personal Information</legend>
+             <label for="first-name">First Name:</label>
+             <input type="text" id="first-name" name="first-name"><br><br>
+ 
+             <label for="last-name">Last Name:</label>
+             <input type="text" id="last-name" name="last-name"><br><br>
+ 
+             <label for="age">Age:</label>
+             <input type="number" id="age" name="age" min="0" max="120"><br><br>
+         </fieldset>
+    </form>
+</body>
+</html>

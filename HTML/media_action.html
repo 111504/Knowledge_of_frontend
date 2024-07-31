@@ -1,0 +1,45 @@
+<!-- 
+    常見的多媒體事件
+play：當媒體播放時觸發。
+pause：當媒體暫停時觸發。
+ended：當媒體播放結束時觸發。
+volumechange：當媒體音量改變時觸發。
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>多媒體事件示例</title>
+</head>
+<body>
+  <video id="video" width="320" height="240" controls>
+    <source src="movie.mp4" type="video/mp4">
+    您的瀏覽器不支持 HTML5 視頻標籤。
+  </video>
+
+  <script>
+    // 多媒體事件處理程序
+    function handlePlay() {
+      console.log('視頻播放');
+    }
+
+    function handlePause() {
+      console.log('視頻暫停');
+    }
+
+    function handleEnded() {
+      console.log('視頻播放結束');
+    }
+
+    function handleVolumeChange() {
+      console.log('視頻音量改變');
+    }
+
+    // 為多媒體事件添加監聽器
+    const video = document.getElementById('video');
+    video.addEventListener('play', handlePlay);
+    video.addEventListener('pause', handlePause);
+    video.addEventListener('ended', handleEnded);
+    video.addEventListener('volumechange', handleVolumeChange);
+  </script>
+</body>
+</html>

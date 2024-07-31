@@ -1,0 +1,82 @@
+<!-- 常見的表單事件
+focus：當元素獲得焦點時觸發。
+blur：當元素失去焦點時觸發。
+input：當元素的值改變時觸發。
+change：當元素的值改變並失去焦點時觸發。
+submit：當提交表單時觸發。
+reset：當重置表單時觸發。 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>表單事件示例</title>
+  <style>
+    .form-group {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <form id="exampleForm">
+    <div class="form-group">
+      <label for="textInput">文本輸入：</label>
+      <input type="text" id="textInput" name="textInput">
+    </div>
+    <div class="form-group">
+      <label for="selectInput">選擇框：</label>
+      <select id="selectInput" name="selectInput">
+        <option value="option1">選項1</option>
+        <option value="option2">選項2</option>
+        <option value="option3">選項3</option>
+      </select>
+    </div>
+    <button type="submit">提交</button>
+    <button type="reset">重置</button>
+  </form>
+
+  <script>
+    // 表單事件處理程序
+    function handleFocus(event) {
+      console.log(`${event.target.name} 獲得焦點`);
+    }
+
+    function handleBlur(event) {
+      console.log(`${event.target.name} 失去焦點`);
+    }
+
+    function handleInput(event) {
+      console.log(`${event.target.name} 的值變為：${event.target.value}`);
+    }
+
+    function handleChange(event) {
+      console.log(`${event.target.name} 的值改變為：${event.target.value}`);
+    }
+
+    function handleSubmit(event) {
+      event.preventDefault(); // 防止表單實際提交
+      console.log('表單提交');
+    }
+
+    function handleReset(event) {
+      console.log('表單重置');
+    }
+
+    // 為表單元素添加監聽器
+    const textInput = document.getElementById('textInput');
+    const selectInput = document.getElementById('selectInput');
+    const form = document.getElementById('exampleForm');
+
+    textInput.addEventListener('focus', handleFocus);
+    textInput.addEventListener('blur', handleBlur);
+    textInput.addEventListener('input', handleInput);
+    textInput.addEventListener('change', handleChange);
+
+    selectInput.addEventListener('focus', handleFocus);
+    selectInput.addEventListener('blur', handleBlur);
+    selectInput.addEventListener('input', handleInput);
+    selectInput.addEventListener('change', handleChange);
+
+    form.addEventListener('submit', handleSubmit);
+    form.addEventListener('reset', handleReset);
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!-- 
+    常見的視圖事件
+load：當頁面完全加載時觸發。
+resize：當調整瀏覽器窗口大小時觸發。
+scroll：當滾動頁面或元素時觸發。
+unload：當頁面卸載時觸發。
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>視圖事件示例</title>
+  <style>
+    body {
+      height: 2000px; /* 使頁面足夠長以觸發滾動事件 */
+    }
+    .content {
+      height: 300px;
+      overflow: auto;
+      border: 1px solid #000;
+    }
+    .inner-content {
+      height: 600px;
+      background-color: lightgray;
+    }
+  </style>
+</head>
+<body>
+  <div class="content" id="scrollableContent">
+    <div class="inner-content">滾動以觸發事件</div>
+  </div>
+
+  <script>
+    // 視圖事件處理程序
+    function handleLoad() {
+      console.log('頁面完全加載');
+    }
+
+    function handleResize() {
+      console.log('瀏覽器窗口大小改變');
+    }
+
+    function handleScroll(event) {
+      console.log('滾動事件觸發');
+    }
+
+    function handleUnload() {
+      console.log('頁面卸載');
+    }
+
+    // 為視圖事件添加監聽器
+    window.addEventListener('load', handleLoad);
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('unload', handleUnload);
+
+    // 為可滾動元素添加滾動事件監聽器
+    const scrollableContent = document.getElementById('scrollableContent');
+    scrollableContent.addEventListener('scroll', handleScroll);
+  </script>
+</body>
+</html>
