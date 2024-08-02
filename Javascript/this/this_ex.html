@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 構造函數中的 this -->
+    <button id="myButton">click</button>
+    <script>
+        function ButtonHandler(){
+            this.count = 0;
+             // 使用 bind 將 handleClick 方法中的 this 綁定到當前 ButtonHandler 實例
+            this.handleClick = this.handleClick.bind(this);
+        }
+
+        ButtonHandler.prototype.handleClick=function(){
+            console.log(this)//如果不綁定this，this 預設指向按鈕 <button id="myButton">click</button>
+            this.count++;// 會導致錯誤，因為 this.count 是 undefined
+            console.log('Button clicked'+this.count+'times');
+        }
+
+        const handler = new ButtonHandler();
+        document.getElementById('myButton').addEventListener('click',handler.handleClick);
+    </script>
+</body>
+</html>
