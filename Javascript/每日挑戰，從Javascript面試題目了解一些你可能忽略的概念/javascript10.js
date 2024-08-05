@@ -28,6 +28,16 @@ function test2(){
 test2()
 console.log(a2)
 format()
+
+
+var a3=10
+function test3(){
+    var a3=15;
+    console.log(a3)
+}
+test3()
+console.log(a3)
+format()
 console.log("var 變數可以先使用，後命名")
 console.log(usef)
 var usef;
@@ -52,11 +62,11 @@ function demo() {
       let author3 = 'Wang'
     }
     console.log(host3)
-   // console.log(author3)
+   // console.log(author3)  author3 報錯 Uncaught ReferenceError: author3 is not defined
   }
   
   demo()
-  console.log("author3 報錯 Uncaught ReferenceError: author3 is not defined")
+  
   format()
   console.log("總結")
   console.log("1.var能重複宣告相同名稱的變數，const & let則不行\n")
